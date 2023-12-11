@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Results{% endblock %}
+
+
+{% block content %}
+<h2>Results</h2>
+
+<form id="pesticideForm" method="post" action="/results">
+    {% for pest in pesticides_dict: %}
+    <strong>{{ pest }}:</strong>
+    <div class="container mt-5 table-responsive">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    {% for header in headers: %}
+                    <th scope="col" data-toggle="tooltip" data-placement="top" title="{{description[header]}}">
+                        {{NiceName[header]}}
+                    </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for pesticide in pesticides_dict[pest]: %}
+                <tr>
+                    {% for header in headers: %}
+                    <td data-toggle="tooltip" data-placement="top" {% if header in Sources1:%}
+                        title="{{pesticides[pesticide]['source2']}}" {% elif header in Sources2:
+                        %}title="{{pesticides[pesticide]['source1']}}" {% endif %}>
+                        {{pesticides[pesticide][header]}}
+                    </td>
+
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+    <input type="hidden" id="selectedPesticides" name="selectedPesticides" value="">
+    <p><a href="https://mailaub-my.sharepoint.com/:x:/g/personal/hmk57_mail_aub_edu/ETlMcmMBHGlCsx6vvSBaZ1gBzzK1cDbIAywSJ_u_pg2EaA?e=qJcggO"
+            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Click on this
+            link for more info on pesticides</a></p>
+
+    <button type="submit" class="btn btn-primary mt-3">Submit My Choice</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var selectedPesticides = [];
+
+        // Handle clicking on pesticide names
+        $(".pesticide-link").click(function (e) {
+            e.preventDefault();
+            var pesticideName = $(this).data("pesticide");
+            $(this).toggleClass("text-success");
+
+            // Add or remove the selected pesticide from the array
+            if ($(this).hasClass("text-success")) {
+                selectedPesticides.push(pesticideName);
+            } else {
+                selectedPesticides = selectedPesticides.filter(item => item !== pesticideName);
+            }
+
+            // Update the hidden input value with the selected pesticide names
+            $("#selectedPesticides").val(selectedPesticides.join(','));
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltipster({
+            contentAsHTML: true
+        });
+    });
+</script>
+
+
+{% endblock %}

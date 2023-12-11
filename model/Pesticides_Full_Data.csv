@@ -1,0 +1,73 @@
+Pesticide,number_targeted_pests,number_normalized,price_oz,perc_act,oz_5acres,price_5acres,price_norm,seen_on,evmt_score_animals,evmt_score_pollution,effectiveness_score,human_health,source_evmt_eff,data_eff_research,source_eff_add
+name of active ingredient,number of total targeted pests,"number of targeted pests normalized (divided by max, which is 65)","price in american dollars per ounce of pesticide solution. When possible, the price per ounce is determined based on the price of a quart (32 oz). 
+
+If the pesticide could not be found on a legitimate selling website, a value of -1 is given.","percentage of the main active ingredient in the pesticide solution, in %
+
+If the pesticide could not be found on a legitimate selling website, a value of -1 is given.","Number of ounces of product necessary to treat 5 acres of land. For pesticides meant to be diluted, with no specific amount of gallons of solution per acre given, the amount is taken to be 20 gallons per acre (so 100 gallons in total).
+Note that the type of pest and severity of the infestation, as well as the type of crop, affect this number. An ""informed average"" is taken here, for a  mild infestation, and based on the type of pests for which this active ingredient is proposed in our chosen dataset.
+
+If the pesticide could not be found on a legitimate selling website, a value of -1 is given.","cost of treating 5 acres of land. Note that for pesticides with dilution instructions and no given gallons per acre ratio, it is assumed that 20 gallons per acre of diluted solution are necessary. For dry pesticides, which are not diluted, the amount  of powder necessary to treat five acres of land is used.
+
+If the pesticide could not be found on a legitimate selling website, a value of -1 is given.","price per gallon normalized (divided by the maximum)
+
+If the pesticide could not be found on a legitimate selling website, a value of -1 is given.","website the product was seen on. 
+
+If the pesticide could not be found on a legitimate selling website, NA is marked instead.","Impact on native or endangered species. Taken from the three databases. When many values are considered, the weighted average is taken and rounded to the nearest half-integer. Double the weight is given to the highest value in the name of caution.
+0: low 
+1: moderate
+2: high","Volatileness and effect on water polution. Taken from the three databases. When many values are considered, the weighted average is taken and rounded to the nearest half-integer. Double the weight is given to the highest value in the name of caution.
+0: low
+1: moderate
+2: high","overall effectiveness against target pest. Taken from the databases when possible, and contrasted with subsequent research. When no database gave an estimate, the score is fully attributed through research.
+0: low
+1: moderate
+2: high","effect and danger on human health (direct exposure). Taken from the three databases. When many values are considered, the weighted average is taken and rounded to the nearest half-integer. Double the weight is given to the highest value in the name of caution.
+0: low
+1: moderate
+2: high","The three databases searched for the environmental indices, efficacy or health dangers. Each pesticide was found on at least one of these databases.
+UC IPM: University of California Integrated Pest Management program
+PPDB: University of Hertfordshire Pesticide Properties DataBase
+BPDB: University of Hertfordshire BioPesticides DataBase","0: the databases provided info on effectiveness (which was potentially verified by research)
+1: the efficacy was fully evaluated through research
+2: the databases provided information which was changed after subsequent research. The change was limited to 0.5. 
+2 indicates that the stated efficacy score is 0.5 points above that given by the databse, and -2 that it is 0.5 points lower.",additional source(s) on efficacy when the databases did not provide enough data
+Abamectin,14,0.215384615,2.65,1.9,6,15.9,0.0125,DoMyOwn.com,2,2,1.5,2,UC IPM / PPDB,0,NA
+Acephate,7,0.107692308,1.49,97,14,20.86,0.016399371,DoMyOwn.com,2,0.5,1.5,1.5,UC IPM / PPDB,0,"Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Acetamiprid,17,0.261538462,6.1,8.5,13,79.3,0.062342767,DoMyOwn.com,1.5,0.5,1.5,0.5,UC IPM / PPDB,0,"Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Bacillus thuringiensis,12,0.184615385,0.97,98.4,67,64.99,0.051092767,DoMyOwn.com,0.5,0.5,0.5,0,BPDB / UC IPM,0,NA
+Bifenazate,8,0.123076923,13,22.6,6,78,0.061320755,DoMyOwn.com,2,2,2,2,PPDB,1,"Ochiai, N., Mizuno, M., Mimori, N., Miyake, T., Dekeyser, M., Canlas, L. J., & Takeda, M. (2007). Toxicity of bifenazate and its principal active metabolite, diazene, to Tetranychus urticae and Panonychus citri and their relative toxicity to the predaceous mites, Phytoseiulus persimilis and Neoseiulus californicus. Experimental & applied acarology, 43(3), 181–197. https://doi.org/10.1007/s10493-007-9115-9"
+Bifenthrin,4,0.061538462,0.53,7.9,144,76.32,0.06,DoMyOwn.com,2,2,2,1.5,UC IPM / PPDB,0,"Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Buprofezin,5,0.076923077,9.1,70,45,409.5,0.321933962,DoMyOwn.com,1,1,0.5,1,PPDB,1,"Rossitto De Marchi, B., & Smith, H. (2021). Efficacy of buprofezin, pyriproxyfen and spirotetramat against bemisia tabaci MEAM1 nymphal field populations in florida. Crop Protection, 149, 105756. https://doi.org/10.1016/j.cropro.2021.105756"
+Carbaryl,25,0.384615385,0.95,23.7,67,63.65,0.050039308,DoMyOwn.com,2,1,1,2,PPDB,0,"Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Carbofuran,3,0.046153846,-1,-1,-1,-1,-1,NA,2,1,1,2,PPDB,1,"Kumar, S., & Pandey, A. K. (2022). Bio-efficacy of various insecticides against white grubs (coleoptera: Scarabaeidae) infesting sugarcane. International Journal of Tropical Insect Science, 42(5), 3319-3325. https://doi.org/10.1007/s42690-022-00820-8"
+Chlorantraniliprole,9,0.138461538,5.61,18.4,34,190.74,0.14995283,DoMyOwn.com,1.5,1.5,1,0.5,UC IPM / PPDB,-2,"Kumar, S., & Pandey, A. K. (2022). Bio-efficacy of various insecticides against white grubs (coleoptera: Scarabaeidae) infesting sugarcane. International Journal of Tropical Insect Science, 42(5), 3319-3325. https://doi.org/10.1007/s42690-022-00820-8"
+Chlorfenapyr,5,0.076923077,4.24,21.45,300,1272,1,DoMyOwn.com,2,1,2,2,PPDB,1,"Agumba, S., Gimnig, J. E., Ogonda, L., Ombok, M., Kosgei, J., Munga, S., Guyah, B., Omondi, S., & Ochomo, E. (2019). Diagnostic dose determination and efficacy of chlorfenapyr and clothianidin insecticides against anopheles malaria vector populations of western kenya. Malaria Journal, 18(1), 243-243. https://doi.org/10.1186/s12936-019-2858-z"
+Chlorpyrifos,54,0.830769231,0.168,2.5,3484,585.312,0.460150943,DoMyOwn.com,2,1,1,1.5,PPDB,2,"Kumar, S., & Pandey, A. K. (2022). Bio-efficacy of various insecticides against white grubs (coleoptera: Scarabaeidae) infesting sugarcane. International Journal of Tropical Insect Science, 42(5), 3319-3325. https://doi.org/10.1007/s42690-022-00820-8
+
+Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Clothianidin,9,0.138461538,0.282,0.25,2560,721.92,0.56754717,DoMyOwn.com,2,1.5,2,2,BPDB / UC IPM / PPDB,1,"Kumar, S., & Pandey, A. K. (2022). Bio-efficacy of various insecticides against white grubs (coleoptera: Scarabaeidae) infesting sugarcane. International Journal of Tropical Insect Science, 42(5), 3319-3325. https://doi.org/10.1007/s42690-022-00820-8"
+Cyfluthrin,3,0.046153846,3.11,6,12,37.32,0.029339623,DoMyOwn.com,2,0.5,2,2,UC IPM / PPDB,0,"Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Cypermethrin,7,0.107692308,2.16,25.3,100,216,0.169811321,DoMyOwn.com,2,1.5,2,1.5,UC IPM / PPDB,0,NA
+Diazinon,6,0.092307692,-1,-1,-1,-1,-1,NA,2,1,0.5,2,PPDB,1,"Mihretie, A., Yimer, D., Wudu, E., & Kassaw, A. (2020). Efficacy of insecticides against african bollworm (helicoverpa armigera hubner) on chickpea (cicer arietinum) in the lowlands of wollo, northeastern ethiopia. Cogent Food & Agriculture, 6(1), 1833818. 
+https://doi.org/10.1080/23311932.2020.1833818"
+Dimethoate,4,0.061538462,-1,-1,-1,-1,-1,NA,2,2,2,2,PPDB,0,"Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Dinotefuran,13,0.2,10.37,20,6,62.22,0.048915094,DoMyOwn.com,2,1.5,1.5,0.5,UC IPM / PPDB,0,"Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Emamectin benzoate,11,0.169230769,-1,-1,-1,-1,-1,NA,1.5,0.5,0.5,2,BPDB / UC IPM,1,"Kumar, S., & Pandey, A. K. (2022). Bio-efficacy of various insecticides against white grubs (coleoptera: Scarabaeidae) infesting sugarcane. International Journal of Tropical Insect Science, 42(5), 3319-3325. https://doi.org/10.1007/s42690-022-00820-8"
+Fipronil,8,0.123076923,5.39,0.65,50,269.5,0.211871069,DoMyOwn.com,2,1.5,1.5,1.5,UC IPM / PPDB,0,"Kumar, S., & Pandey, A. K. (2022). Bio-efficacy of various insecticides against white grubs (coleoptera: Scarabaeidae) infesting sugarcane. International Journal of Tropical Insect Science, 42(5), 3319-3325. https://doi.org/10.1007/s42690-022-00820-8"
+Imidacloprid,65,1,0.83,21.8,131,108.73,0.08547956,DoMyOwn.com,2,1.5,1.5,1.5,BPDB / UC IPM / PPDB,0,"Kumar, S., & Pandey, A. K. (2022). Bio-efficacy of various insecticides against white grubs (coleoptera: Scarabaeidae) infesting sugarcane. International Journal of Tropical Insect Science, 42(5), 3319-3325. https://doi.org/10.1007/s42690-022-00820-8
+
+Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Indoxacarb,4,0.061538462,1.49,0.04,24,35.76,0.028113208,DoMyOwn.com,2,1,1,2,PPDB,1,"Mihretie, A., Yimer, D., Wudu, E., & Kassaw, A. (2020). Efficacy of insecticides against african bollworm (helicoverpa armigera hubner) on chickpea (cicer arietinum) in the lowlands of wollo, northeastern ethiopia. Cogent Food & Agriculture, 6(1), 1833818. 
+https://doi.org/10.1080/23311932.2020.1833818"
+Lambda-cyhalothrin,14,0.215384615,2.52,9.7,60,151.2,0.118867925,DoMyOwn.com,2,1.5,2,1.5,UC IPM / PPDB,0,"Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Malathion,14,0.215384615,1.12,55,25,28,0.022012579,DoMyOwn.com,2,1,1.5,1.5,UC IPM / PPDB,0,"Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Methomyl,11,0.169230769,-1,-1,-1,-1,-1,NA,2,2,2,2,PPDB,1,"Leskey, T. C., Lee, D., Short, B. D., & Wright, S. E. (2012). Impact of insecticides on the invasive halyomorpha halys (hemiptera: Pentatomidae): Analysis of insecticide lethality. Journal of Economic Entomology, 105(5), 1726-1735. https://doi.org/10.1603/EC12096"
+Methoxyfenozide,3,0.046153846,3.41,28.3,40,136.4,0.107232704,DoMyOwn.com,1,2,2,1,PPDB,0,NA
+Permethrin,4,0.061538462,1.34,36.8,320,428.8,0.337106918,DoMyOwn.com,2,2,1.5,1.5,UC IPM / PPDB,0,NA
+Spinosad,17,0.261538462,1.25,0.5,400,500,0.393081761,DoMyOwn.com,1,1.5,1,0.5,BPDB / UC IPM,2,"Mihretie, A., Yimer, D., Wudu, E., & Kassaw, A. (2020). Efficacy of insecticides against african bollworm (helicoverpa armigera hubner) on chickpea (cicer arietinum) in the lowlands of wollo, northeastern ethiopia. Cogent Food & Agriculture, 6(1), 1833818. 
+https://doi.org/10.1080/23311932.2020.1833818"
+Spiromesifen,6,0.092307692,40,45.2,3,120,0.094339623,DoMyOwn.com,1,2,2,1,PPDB,1,"Liu, T. (2004). Toxicity and efficacy of spiromesifen, a tetronic acid insecticide, against sweetpotato whitefly (homoptera: Aleyrodidae) on melons and collards. Crop Protection, 23(6), 505-513. https://doi.org/10.1016/j.cropro.2003.10.006
+
+Bi, J. L., & Toscano, N. C. (2007). Efficacy of spiromesifen against greenhouse whitefly (homoptera: Aleyrodidae) on strawberry. Hortscience, 42(2), 285-288. https://doi.org/10.21273/hortsci.42.2.285"
+Thiacloprid,5,0.076923077,-1,-1,-1,-1,-1,NA,2,1,2,2,PPDB,0,NA
+Thiamethoxam,28,0.430769231,3.59,11.6,110,394.9,0.310455975,DoMyOwn.com,2,1.5,1.5,0.5,UC IPM / PPDB,0,"Kumar, S., & Pandey, A. K. (2022). Bio-efficacy of various insecticides against white grubs (coleoptera: Scarabaeidae) infesting sugarcane. International Journal of Tropical Insect Science, 42(5), 3319-3325. https://doi.org/10.1007/s42690-022-00820-8"
